@@ -1,7 +1,7 @@
 from tokenize import String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, ForeignKey
-from traitlets import Integer. Integer, String, DataTime, create_engine, ForeignKey
+from sqlalchemy import Column, Integer, String, DateTime, create_engine, ForeignKey
 from datetime import datetime
 
 Base = declarative_base()
@@ -21,7 +21,12 @@ class Book(Base):
     title = Column(String(50))
     publication = Column(String(50))
     pages = Column(Integer)
-    author_id = Column(Integer, Foreignkey('authors.id'))
+    author_id = Column(Integer, ForeignKey('authors.id'))
     created_date = Column(DateTime, default=datetime.now)
 
-     de        
+    def __str__(self):
+        return self.title
+
+if __name__ == '__main__':
+    engine = create_engine('sqlite:///mydb.sqlite', echo=True)
+    Base.metadata.create_all(engine)               
