@@ -11,12 +11,17 @@ st.text('This is simple text example')
 st.write('This is magical function')
 st.markdown('This is a **markdown ** example')
 st.success('This is success message')
+st.info('This is an info message')
+st.warning('This is a warning message')
+st.error('This is an error message')
+st.exception('This is an exception message')
 
 
 
 # media element
-#st.image(r'C:\Users\91969\Documents\python\20190625_191425.jpg',use_column_width=True)
-st.video(r"C:\Users\91969\Documents\python\video_sample.mkv")
+st.image('20190625_191425.jpg',use_column_width=True)
+st.video("https://www.youtube.com/watch?v=pwNZGVHx2hQ")
+st.audio('')
 
 # widgets
 name = st.text_input('Enter the name')
